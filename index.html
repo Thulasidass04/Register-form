@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Angular Js 1.x</title>
+	<link rel="stylesheet" type="text/css" href="./css/lib/bootstrap.min.css">
+	<script src="/js/lib/angular.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/controllers/main.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl as m">
+	<div class="container">
+    <div class="col-md-4">
+        <div class="row">
+          <h3>Register</h3>
+            <form class="control-group" name="AddData" ng-sumbit="RegisterMe()">
+                <label><b>ID:</b></label>
+                <input type="text" name="id" ng-model="m.register.id" class="form-control" required>
+                <label><b>Name:</b></label>
+                <input type="text" name="name" ng-model="m.register.name" class="form-control" required>
+                <label><b>Age:</b></label>
+                <input type="text" name="age" ng-model="m.register.age" class="form-control" required>
+                <br>
+                <button class="btn btn-success" ng-click="m.RegisterMe(register)">Register</button>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
