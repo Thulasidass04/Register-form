@@ -12,16 +12,15 @@
     <div class="col-md-4">
         <div class="row">
           <h3>Register</h3>
-            <form class="control-group" name="login" ng-sumbit="RegisterMe()" novalidate>
-                <label><b>Email:</b></label>
-                <input type="text" name="email" ng-model="m.register.email" class="form-control" required>
-                
+            <form class="control-group" name="AddData" ng-sumbit="RegisterMe()">
+                <label><b>ID:</b></label>
+                <input type="text" name="id" ng-model="m.register.id" class="form-control" required>
                 <label><b>Name:</b></label>
                 <input type="text" name="name" ng-model="m.register.name" class="form-control" required>
                 <label><b>Age:</b></label>
                 <input type="text" name="age" ng-model="m.register.age" class="form-control" required>
                 <br>
-                <button class="btn btn-success" ng-disabled = "!login.$valid">Register</button>
+                <button class="btn btn-success" ng-click="m.RegisterMe(register)">Register</button>
             </form>
             <br>
         </div>
