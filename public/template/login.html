@@ -1,0 +1,19 @@
+ <div class="container">
+        <div class="col-md-4">
+            <div class="row">
+                <h3>Register</h3>
+                <form class="control-group" name="login" ng-sumbit="m.RegisterMe()" novalidate>
+                <label><b>Email:</b></label>
+                <input type="text" name="email" ng-model="m.register.email" class="form-control" required>
+                
+                <label><b>Name:</b></label>
+                <input type="text" name="name" ng-model="m.register.name" class="form-control" required>
+                <label><b>password:</b></label>
+                <input type="password" name="password" ng-model="m.register.password" class="form-control" required>
+                <br>
+                <button class="btn btn-success" ng-disabled = "!login.$valid">Register</button>
+            </form>
+                <br>
+            </div>
+        </div>
+    </div>
