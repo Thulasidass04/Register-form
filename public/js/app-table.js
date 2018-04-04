@@ -1,15 +1,18 @@
 'use strict';
 (function () {
-	 angular.module('myApp', [])
-	 .factory('myFactory',['$http',function($http){
-	 	let user = {};
-	 	user.getData = function(cb){
-	 		$http.get('./test.json')
-	 		.then(function(res){
-	 			console.log('FAC_RES',res);
-	 			cb(res);
-	 		})
-	 	}
-	 	return user;
-	 }])
+	var app = angular.module('myApp')
+	app.factory('myFactory', function($http) {
+			let serivces = {};
+			serivces.user = function(){
+				return $http.get('../test.json')
+					.then(data => {
+						return data;
+					})
+					.catch(error => {
+						console.log(error)
+					})
+			}
+			return serivces;
+		})
+	 
 })();

@@ -1,19 +1,19 @@
 'use strict';
-(function() {
-    angular.module('myApp')
-        .controller('MyCtrl', MyCtrl)
-        
-    function MyCtrl($scope, myFactory) {
-        // const vm = this;
-        myFactory.getData(function(list) {
-            $scope.userList = list.data.response;
-        })
+( function() {
+	var app = angular.module('myApp', [])
+		app.controller('myCtrl', ['myFactory', myCtrl])
+		function myCtrl(myFactory){
+			let vm = this;
+			vm.name = 'prakash'
+			console.log('hi')
+			myFactory.user()
+			.then(data => {
+				console.log(data.data.response)
+				vm.userList = data.data.response
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		}
 
-    }
-    MyCtrl.$inject = ['$scope', 'myFactory'];
-
-
-
-
-
-})()
+}())
